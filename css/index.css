@@ -205,6 +205,7 @@ html {
   margin-bottom: 20px;
   padding: 40px 30px;
   background: aliceblue;
+  border: 1px solid lightgrey;
 }
 .container .heres-michael hr {
   width: 100%;
@@ -231,7 +232,7 @@ html {
   cursor: pointer;
 }
 .container .heres-michael button:hover {
-  border: 1px solid black;
+  border: 1px solid lightgrey;
 }
 .container .whos-michael {
   display: flex;
@@ -242,6 +243,17 @@ html {
 .container .whos-michael .text-container {
   width: 50%;
   padding: 20px;
+}
+.container .whos-michael ul {
+  border: 1px solid lightgrey;
+  border-top: 0;
+  margin: 10px 5px;
+}
+.container .whos-michael li {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  width: 100%;
+  border-top: 1px solid lightgrey;
 }
 .container .where-michaels-been {
   width: 100%;

@@ -256,6 +256,7 @@ html {
 		margin-bottom: 20px;
 		padding: 40px 30px;
 		background : @shaded;
+		border: 1px solid @outlined;
 
 		hr {
 			.full-width();
@@ -285,7 +286,7 @@ html {
 			cursor: pointer;
 
 			&:hover {
-				border: 1px solid black;
+				border: 1px solid @outlined;
 			}
 		}
 	}
@@ -298,7 +299,20 @@ html {
 			.half-width();
 			padding: 20px;
 		}
-		
+
+		ul {
+			border: 1px solid @outlined;
+			border-top: 0;
+			margin: 10px 5px;
+		}
+
+		li {
+			.full-width();
+			.font-size(1.5rem);
+			padding : 10px 20px;
+			width : 100%;
+			border-top: 1px solid @outlined;
+		}		
 	}
 
 	.where-michaels-been {
