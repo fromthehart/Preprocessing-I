@@ -1,11 +1,13 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
   <title>My Resume</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Rubik" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
 
   <!--[if lt IE 9]>
@@ -14,6 +16,97 @@
 </head>
 
 <body>
-  <h1>My Resume</h1>
+  <div class="container">
+    <header>
+      <div class="space"></div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="heres-michael">
+      <div class="photo">
+        <img src="img/michaelhart.jpg" alt="A photo of Michael Hart">
+      </div>
+      <h1>Michael Hart - Web Dev</h1>
+      <hr>
+      <div class="text-container">
+        <p>Occasionally I have time to work on side projects. If you're interested, let me know by signing up on this
+          website.</p>
+        <button class="teamup">Let's Team Up</button>
+      </div>
+
+    </section>
+
+    <section class="whos-michael">
+      <div class="text-container">
+        <h2>Listen Up...</h2>
+        <p>Proin sed quam sed tellus vestibulum ultrices quis in nunc. Phasellus id dui id tortor tincidunt
+          efficitur. Proin faucibus imperdiet erat, non varius lacus. Maecenas non nisl id turpis egestas
+          tincidunt. Nam condimentum venenatis magna eget finibus.</p>
+      </div>
+      <div class="text-container">
+        <h2>Stuff I'm Good At:</h2>
+        <ul>
+          <li>Disc Golf</li>
+          <li>Coding up UI</li>
+          <li>Playing lots of video games</li>
+          <li>Using bootstrap grid</li>
+          <li>Taking long naps</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="where-michaels-been">
+      <h2>Work History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Yrs</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Tech Used</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>1</td>
+          <td>Apple</td>
+          <td>Software Engineer</td>
+          <td>Swift</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Microsoft</td>
+          <td>Computer Scientist</td>
+          <td>.NET</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Amazon</td>
+          <td>Dev ops</td>
+          <td>AWS</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="talk-to-michael">
+      <h2>Contact</h2>
+      <address>
+        <p>1313 Mockingbird Ln<br>
+          Springfield, IL</p>
+        <p>Phone: +1 800 555 1313</p>
+      </address>
+    </section>
+
+    <footer>
+      <div class="copyright">
+        Copyright &copy; Michael Hart 2019
+      </div>
+    </footer>
+  </div><!-- container -->
 </body>
+
 </html>

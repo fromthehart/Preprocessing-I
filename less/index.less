@@ -1,59 +1,306 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+ v2.0 | 20110126
+ License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
-	padding: 0;
+	padding : 0;
 	border: 0;
-	font-size: 100%;
+	font-size : 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing : 0;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+/* LESS setup */
+.font-size(@sizeValue: 1rem) {
+	font-size:@sizeValue;
+}
+
+.font-stack(@baseFont, @fallbackFont) {
+	font-family: "@{baseFont}",
+	@fallbackFont;
+}
+
+.flex(@flexFlow, @flexSpacing) {
+	display: flex;
+	flex-flow: @flexFlow;
+	justify-content: @flexSpacing;
+}
+
+.full-width() {
+	width: 100%;
+}
+
+.half-width() {
+	width: 50%;
+}
+
+.third-width() {
+	width: 33.33%;
+}
+
+.two-thirds-width() {
+	width: 66.66%;
+}
+
+@shaded: aliceblue;
+@outlined: lightgrey;
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
+	.font-stack(Roboto, sans-serif);
+	font-size: 62.5%;
 }
 
+h1,
+h2,
+h3 {
+	.font-stack(Rubik, sans-serif);
+	.full-width();
+	padding: 5px 0;
+	display: block;
+}
+
+p {
+	line-height: 1.4;
+	.font-size(1.4rem);
+	padding: 10px 0;
+}
+
+hr {
+	.full-width();
+	height: 1px;
+	margin: 15px 0;
+}
+
+.container {
+	width: 800px;
+	max-width: 100%;
+	margin : 25px auto;
+	padding: 25px;
+	border: 1px solid black;
+
+	h1 {
+		.font-size(4rem);
+	}
+
+	h2 {
+		.font-size(2.4rem);
+		font-weight: normal;
+	}
+
+	header {
+		.flex(row wrap, space-between);
+		.full-width();
+		margin-bottom: 20px;
+
+		.space {
+			.half-width();
+		}
+
+		nav {
+			.font-size(1.7rem);
+			.flex(row wrap, space-between);
+			.half-width();
+		}
+
+		nav a {
+			color: black;
+			text-decoration: none;
+			padding: 0 10px;
+		}
+
+		nav a:hover {
+			font-weight: bold;
+			color: teal;
+		}
+	}
+
+	.heres-michael {
+		.flex(row wrap, space-evenly);
+		.full-width();
+		margin-bottom: 20px;
+		padding: 40px 30px;
+		background : @shaded;
+
+		.photo {
+			.full-width();
+			margin-bottom: 20px;
+		}
+
+		.text-container {
+			.full-width();
+			padding: 0 1% 20px;
+		}
+	}
+
+	.whos-michael {
+		.flex(row wrap, between);
+		.full-width();
+
+		.text-container {
+			.half-width();
+			padding: 20px;
+		}
+	}
+
+	.where-michaels-been {
+		.full-width();
+		padding: 10px 30px;
+	}
+
+	.talk-to-michael {
+		margin : 20px 0;
+		padding: 10px 30px;
+	}
+
+	footer {
+		width : 100%;
+		height: 60px;
+		margin: 20px 0 0;
+		.flex(row, center);
+		background : darkgray;
+
+		.copyright {
+			.font-size(1.2rem);
+			height : 100%;
+			display: flex;
+			align-items: center;
+			color: white;
+		}
+	}
+}
