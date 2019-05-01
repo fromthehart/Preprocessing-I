@@ -182,29 +182,10 @@ html {
 html,
 body {
 	height: 100%;
-	.font-stack(Roboto, sans-serif);
+}
+
+html {
 	font-size: 62.5%;
-}
-
-h1,
-h2,
-h3 {
-	.font-stack(Rubik, sans-serif);
-	.full-width();
-	padding: 5px 0;
-	display: block;
-}
-
-p {
-	line-height: 1.4;
-	.font-size(1.4rem);
-	padding: 10px 0;
-}
-
-hr {
-	.full-width();
-	height: 1px;
-	margin: 15px 0;
 }
 
 .container {
@@ -213,14 +194,33 @@ hr {
 	margin : 25px auto;
 	padding: 25px;
 	border: 1px solid black;
+	.font-stack(Roboto, sans-serif);
 
+	h1,
+	h2,
+	h3 {
+		.font-stack(Rubik, sans-serif);
+		.full-width();
+		padding: 5px 0;
+		display: block;
+	}
+	
 	h1 {
 		.font-size(4rem);
 	}
-
+	
 	h2 {
 		.font-size(2.4rem);
-		font-weight: normal;
+	}
+	
+	p {
+		line-height: 1.4;
+		.font-size(1.6rem);
+		padding: 10px 0;
+	}
+	
+	img {
+		max-width: 100%;
 	}
 
 	header {
@@ -257,6 +257,12 @@ hr {
 		padding: 40px 30px;
 		background : @shaded;
 
+		hr {
+			.full-width();
+			height: 1px;
+			margin: 15px 0;
+		}
+
 		.photo {
 			.full-width();
 			margin-bottom: 20px;
@@ -265,6 +271,22 @@ hr {
 		.text-container {
 			.full-width();
 			padding: 0 1% 20px;
+		}
+
+		button {
+			.font-size(1.8rem);
+			font-weight: bold;
+			border: 1px solid transparent;
+			border-radius: 5px;
+			background : gray;
+			color: white;
+			padding: 10px 15px;
+			margin-top : 5px;
+			cursor: pointer;
+
+			&:hover {
+				border: 1px solid black;
+			}
 		}
 	}
 
@@ -276,6 +298,7 @@ hr {
 			.half-width();
 			padding: 20px;
 		}
+		
 	}
 
 	.where-michaels-been {
