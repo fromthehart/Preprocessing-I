@@ -85,12 +85,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding : 0;
-	border: 0;
-	font-size : 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -105,239 +105,339 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing : 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 /* LESS setup */
 .font-size(@sizeValue: 1rem) {
-	font-size:@sizeValue;
+  font-size: @sizeValue;
 }
 
 .font-stack(@baseFont, @fallbackFont) {
-	font-family: "@{baseFont}",
-	@fallbackFont;
+  font-family: "@{baseFont}", @fallbackFont;
 }
 
-.flex(@flexFlow, @flexSpacing) {
-	display: flex;
-	flex-flow: @flexFlow;
-	justify-content: @flexSpacing;
+.flex(@flexFlow: initial, @flexSpacing: initial) {
+  display: flex;
+  flex-flow: @flexFlow;
+  justify-content: @flexSpacing;
 }
 
 .full-width() {
-	width: 100%;
+  width: 100%;
 }
 
 .half-width() {
-	width: 50%;
-}
-
-.third-width() {
-	width: 33.33%;
-}
-
-.two-thirds-width() {
-	width: 66.66%;
+  width: 50%;
 }
 
 @shaded: aliceblue;
-@outlined: lightgrey;
+@outlined: grey;
 
 /* Set every element's box-sizing to border-box */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 .container {
-	width: 800px;
-	max-width: 100%;
-	margin : 25px auto;
-	padding: 25px;
-	border: 1px solid black;
+  width: 800px;
+  max-width: 100%;
+  margin: 25px auto;
+  padding: 25px;
+  border: 1px solid @outlined;
 	.font-stack(Roboto, sans-serif);
 
-	h1,
-	h2,
-	h3 {
-		.font-stack(Rubik, sans-serif);
-		.full-width();
-		padding: 5px 0;
-		display: block;
+	@media screen and (max-width: 800px) {
+		border-top: 0;
+		border-bottom: 0;
 	}
 	
-	h1 {
-		.font-size(4rem);
-	}
-	
-	h2 {
-		.font-size(2.4rem);
-	}
-	
-	p {
-		line-height: 1.4;
-		.font-size(1.6rem);
-		padding: 10px 0;
-	}
-	
-	img {
-		max-width: 100%;
+	@media screen and (max-width: 500px) {
+		margin: 0;
+		padding: 20px 0;
+		border: 0;
 	}
 
-	header {
-		.flex(row wrap, space-between);
-		.full-width();
-		margin-bottom: 20px;
 
-		.space {
-			.half-width();
-		}
+  h1,
+  h2,
+  h3 {
+    .font-stack(Rubik, sans-serif);
+    .full-width();
+    padding: 5px 0;
+    display: block;
+  }
 
-		nav {
-			.font-size(1.7rem);
-			.flex(row wrap, space-between);
-			.half-width();
-		}
+  h1 {
+    .font-size(4rem);
+  }
 
-		nav a {
-			color: black;
-			text-decoration: none;
-			padding: 0 10px;
-		}
+  h2 {
+    .font-size(2.4rem);
+  }
 
-		nav a:hover {
-			font-weight: bold;
-			color: teal;
-		}
-	}
+  p {
+    line-height: 1.4;
+    .font-size(1.6rem);
+    padding: 10px 0;
+  }
 
-	.heres-michael {
-		.flex(row wrap, space-evenly);
-		.full-width();
-		margin-bottom: 20px;
-		padding: 40px 30px;
-		background : @shaded;
+  button {
+    .font-size(1.8rem);
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: gray;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid @outlined;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  header {
+    .flex(row wrap, space-between);
+    .full-width();
+    margin-bottom: 20px;
+
+    .space {
+      .half-width();
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
+    }
+
+    nav {
+      .font-size(1.7rem);
+      .flex(row wrap, space-between);
+      .half-width();
+
+      @media screen and (max-width: 700px) {
+				.full-width();
+				.flex(row wrap, space-around);
+      }
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+
+    nav a:hover {
+      font-weight: bold;
+      color: teal;
+    }
+  }
+
+  .heres-michael {
+    .flex(row wrap, space-evenly);
+    .full-width();
+    margin-bottom: 20px;
+    padding: 40px 30px;
+    background: @shaded;
 		border: 1px solid @outlined;
-
-		hr {
-			.full-width();
-			height: 1px;
-			margin: 15px 0;
+		
+		@media screen and (max-width: 500px) {
+			border-left: 0;
+			border-right: 0;
 		}
 
-		.photo {
-			.full-width();
-			margin-bottom: 20px;
-		}
+		br {
+			display: none;
 
-		.text-container {
-			.full-width();
-			padding: 0 1% 20px;
-		}
-
-		button {
-			.font-size(1.8rem);
-			font-weight: bold;
-			border: 1px solid transparent;
-			border-radius: 5px;
-			background : gray;
-			color: white;
-			padding: 10px 15px;
-			margin-top : 5px;
-			cursor: pointer;
-
-			&:hover {
-				border: 1px solid @outlined;
+			@media screen and (max-width: 600px) {
+				display: block;
 			}
 		}
-	}
 
-	.whos-michael {
-		.flex(row wrap, between);
-		.full-width();
+		.hyphen {
+			@media screen and (max-width: 600px) {
+				display: none;
+			}
+		}
 
-		.text-container {
-			.half-width();
+    hr {
+      .full-width();
+      height: 1px;
+      margin: 15px 0;
+    }
+
+    h1 {
+      @media screen and (max-width: 600px) {
+        text-align: center;
+      }
+    }
+
+    .photo {
+      .full-width();
+      margin-bottom: 20px;
+
+      img {
+        max-width: 100%;
+        border: 1px solid @outlined;
+
+        @media screen and (max-width: 600px) {
+          display: block;
+          margin: 0 auto 20px;
+        }
+      }
+    }
+
+    .text-container {
+      .full-width();
+      padding: 0 1% 20px;
+    }
+  }
+
+  .whos-michael {
+    .flex(row wrap, between);
+    .full-width();
+
+    .text-container {
+      .half-width();
 			padding: 20px;
-		}
+			
+			@media screen and (max-width: 500px) {
+				.full-width();
+			}
+    }
 
-		ul {
-			border: 1px solid @outlined;
-			border-top: 0;
-			margin: 10px 5px;
-		}
+    ul {
+      border: 1px solid @outlined;
+      border-top: 0;
+      margin: 10px 5px;
+    }
 
-		li {
-			.full-width();
-			.font-size(1.5rem);
-			padding : 10px 20px;
-			width : 100%;
-			border-top: 1px solid @outlined;
-		}		
-	}
+    li {
+      .full-width();
+      .font-size(1.5rem);
+      padding: 10px 20px;
+      width: 100%;
+      border-top: 1px solid @outlined;
+    }
+  }
 
-	.where-michaels-been {
-		.full-width();
-		padding: 10px 30px;
-	}
+  .where-michaels-been {
+    .full-width();
+    padding: 10px 30px;
 
-	.talk-to-michael {
-		margin : 20px 0;
-		padding: 10px 30px;
-	}
+    table {
+      .full-width();
 
-	footer {
-		width : 100%;
-		height: 60px;
-		margin: 20px 0 0;
-		.flex(row, center);
-		background : darkgray;
+      th {
+        .font-size(1.8rem);
+        .font-stack(Rubik, sans-serif);
+        font-weight: bold;
+        border-top: 1px solid @outlined;
+        border-bottom: 1px solid @outlined;
+        padding: 10px;
+        text-align: left;
+      }
 
-		.copyright {
-			.font-size(1.2rem);
-			height : 100%;
-			display: flex;
-			align-items: center;
-			color: white;
-		}
-	}
+      td {
+        .font-size(1.4rem);
+        font-weight: normal;
+        padding: 10px;
+      }
+
+      tr {
+        border-bottom: 1px solid @outlined;
+      }
+
+      tbody tr:nth-child(odd) {
+        background: @shaded;
+      }
+    }
+  }
+
+  .talk-to-michael {
+    margin: 20px 0;
+    padding: 10px 30px;
+    .full-width();
+
+    .contact fieldset {
+      .full-width();
+    }
+    .contact input[type="text"],
+    .contact input[type="email"],
+    .contact input[type="tel"],
+    .contact input[type="url"],
+    .contact textarea {
+      .full-width();
+      border: 1px solid @outlined;
+      background: white;
+      margin: 10px 0 5px;
+      padding: 10px;
+      .font-size(1.6rem);
+    }
+
+    .contact textarea {
+      height: 100px;
+    }
+  }
+
+  footer {
+    width: 100%;
+    height: 60px;
+    margin: 20px 0 0;
+    .flex(row, center);
+    background: darkgray;
+
+    .copyright {
+      .font-size(1.4rem);
+      height: 100%;
+      .flex(row, center);
+      align-items: center;
+      color: white;
+    }
+  }
 }

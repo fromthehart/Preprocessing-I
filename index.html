@@ -31,7 +31,7 @@
       <div class="photo">
         <img src="img/michaelhart.jpg" alt="A photo of Michael Hart">
       </div>
-      <h1>Michael Hart - Web Dev</h1>
+      <h1>Michael Hart <br><span class="hyphen">- </span>Web Dev</span></h1>
       <hr>
       <div class="text-container">
         <p>Occasionally I have time to work on side projects. If you're interested, let me know by signing up on this
@@ -94,11 +94,26 @@
 
     <section class="talk-to-michael">
       <h2>Contact</h2>
-      <address>
-        <p>1313 Mockingbird Ln<br>
-          Springfield, IL</p>
-        <p>Phone: +1 800 555 1313</p>
-      </address>
+      <form class="contact" method="post" action="https://formspree.io/fromthehart@pm.me">
+        <fieldset>
+          <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Email Address" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+        </fieldset>
+        <fieldset>
+          <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+      </form>
     </section>
 
     <footer>
